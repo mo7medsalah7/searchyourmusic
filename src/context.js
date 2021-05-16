@@ -16,7 +16,7 @@ class LyricsProvider extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=25&country=eg&f_has_lyrics=1
+        axios.get(`http://cors-access-allow.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=25&country=eg&f_has_lyrics=1
         &apikey=${process.env.REACT_APP_LYRICS_API_KEY_NAME}
         `)
             .then(response => {
@@ -49,7 +49,7 @@ class LyricsProvider extends Component {
     getData = () => {
         let tracks = this.state.tracks;
         let {track, artist, album, id_track, id_artist, id_album, haslyrics} = tracks;
-        axios.get(`http://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=5&country=&f_has_lyrics=1
+        axios.get(`http://cors-access-allow.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=5&country=&f_has_lyrics=1
         &apikey=${process.env.REACT_APP_LYRICS_API_KEY_NAME}`)
             .then(response => {
                 if(haslyrics) {
